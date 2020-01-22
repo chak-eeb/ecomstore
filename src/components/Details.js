@@ -46,6 +46,31 @@ export default class Details extends Component {
 									<h4 className='text-title text-uppercase text-muted mt-3 mb-2'>
 										made by : <span className='text-uppercase'> {company}</span>
 									</h4>
+									<h4 className='text-blue'>
+										<strong>
+											Price: <span>$</span>
+											{price}
+										</strong>
+									</h4>
+									<p className='text-capitalize font-weight-bold mt-3 mb-0'>
+										Some info about the product
+									</p>
+									<p className='text-muted lead'>{info}</p>
+									{/* {buttons} */}
+									<div className=''>
+										<Link to='/'>
+											<ButtonContainer>Back to products</ButtonContainer>
+										</Link>
+										<ButtonContainer
+											cart
+											disabled={inCart ? true : false}
+											onClick={() => {
+												value.addToCart(id);
+											}}
+										>
+											{inCart ? 'in cart' : 'add to cart'}
+										</ButtonContainer>
+									</div>
 								</div>
 							</div>
 						</div>
